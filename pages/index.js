@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
-import Layout from "@/components/Layout";
+import Layout, { siteTitle } from "@/components/Layout";
 
 import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
@@ -21,7 +21,10 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
       <section className={utilStyles.headingMd}>
         <p>
           私はフルスタックエンジニアです/Udemy講師として活動しています/好きな言語はJavascriptです
